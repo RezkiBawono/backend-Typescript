@@ -1,10 +1,12 @@
-require("dotenv").config();
-import express, { Request, Response, json } from "express";
-const app = express();
-const connectToDatabase = require("../config/connectDB");
-const mongoose = require("mongoose");
+import express, { Request, Response } from "express";
+import { config } from "dotenv";
+import mongoose from "mongoose";
 import TaskModel from "../models/Task";
+const connectToDatabase = require("../config/connectDB");
+const app = express();
 const PORT = process.env.PORT;
+
+config();
 
 app.use(express.json());
 
