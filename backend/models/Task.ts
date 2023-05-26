@@ -7,18 +7,18 @@ const taskSchema = new Schema({
     type: String,
     required: true,
   },
-  description: {
-    type: String,
-    required: true,
-  },
-  completed: {
-    type: Boolean,
-    default: false,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+  // description: {
+  //   type: String,
+  //   required: true,
+  // },
+  // completed: {
+  //   type: Boolean,
+  //   default: false,
+  // },
+  // createdAt: {
+  //   type: Date,
+  //   default: Date.now,
+  // },
 });
 
 const TaskModel = mongoose.model("Task", taskSchema);
