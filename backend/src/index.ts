@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import TaskModel from "../models/Task";
 const connectToDatabase = require("../config/connectDB");
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 config();
 
@@ -24,7 +24,7 @@ app.get("/task", async (req: Request, res: Response) => {
 
 app.post("/task", async (req, res) => {
   const newTask = new TaskModel({
-    title: "This is the second task",
+    title: req.body.title,
   });
   const createdTask = await newTask.save();
   res.json(createdTask);
